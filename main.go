@@ -40,7 +40,7 @@ func main() {
     fmt.Print("\033[?1003h\033[?1015h\033[?1006h")
     fmt.Print("\033[?1002h")
 
-    defer fmt.Print("\033[?1000l")
+    defer fmt.Print("\033[?1002l")
     defer fmt.Print("\033[?1003l\033[?1015l\033[?1006l")
 
     fmt.Print("\033[?47h")
