@@ -15,8 +15,3 @@ func ordinalNumber(n int) string {
   default: return fmt.Sprintf("%dth", n)
   }
 }
-
-func max(a, b int) int {
-  if a > b { return a }
-  return b
-}

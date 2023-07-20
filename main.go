@@ -57,11 +57,12 @@ func main() {
 
     for {
       fmt.Print("\033[2J")
-      makeBorder(rect, selected_side)
+      show_border(rect, selected_side)
 
-      debug_line = 0
-      debug(fmt.Sprintf("\033[100m 🌦  \033[0m { \033[31m%d\033[0m, \033[31m%d\033[0m, \033[31m%d\033[0m, \033[31m%d \033[0m}", rect.W, rect.H, rect.X, rect.Y))
-      debug(selected_side)
+      goterm.GoToXY(50, 2)
+      fmt.Printf("\033[100m 🌦  \033[0m { \033[31m%d\033[0m, \033[31m%d\033[0m, \033[31m%d\033[0m, \033[31m%d \033[0m}", rect.W, rect.H, rect.X, rect.Y)
+      goterm.GoToXY(50, 3)
+      fmt.Print(selected_side)
 
       key, err := goterm.Getch()
       if err != nil {
@@ -230,7 +231,7 @@ func main() {
       return
     }
 
-    makeBorder(Rect { w, h, x, y }, "")
+    show_border(Rect { w, h, x, y }, "")
     fmt.Println()
   default:
     fmt.Printf(" \033[41m 🍒️ \033[49m Anlayamadım `%s` seçenek.\n\n", argv[1])

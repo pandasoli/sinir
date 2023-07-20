@@ -8,7 +8,7 @@ import (
 )
 
 
-func makeBorder(rect Rect, focus string) {
+func show_border(rect Rect, focus string) {
   color := func(side string, start bool) string {
     if side == focus {
       if start {
